@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="IntuneMAMiOSMauiSample.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="16"
+            Padding="32,32"
+            VerticalOptions="Start">
+
+            <Label
+                Text="Microsoft Intune MAM iOS Maui Sample"
+                SemanticProperties.HeadingLevel="Level2"
+                SemanticProperties.Description="Welcome to dot net Multi platform App UI"
+                FontSize="16"
+                HorizontalOptions="Center" />
+
+            <Entry
+                FontSize="15"
+                Text="Copy/Paste text here" />
+
+            <Entry
+                x:Name="OpenUrlEntry"
+                FontSize="15"
+                Placeholder="https://learn.microsoft.com/dotnet/maui/"
+                IsTextPredictionEnabled="False"
+                IsSpellCheckEnabled="False"
+                Keyboard="Url"/>
+
+            <Button
+                x:Name="OpenBtn"
+                Text="Open URL"
+                SemanticProperties.Hint="Open the link in the entry."
+                Clicked="OnOpenBtnClicked"/>
+
+            <Button
+                x:Name="ShareContentBtn"
+                Text="Share content"
+                SemanticProperties.Hint="Share content using share extension."
+                Clicked="OnShareContentBtnClicked"/>
+
+            <Button
+                x:Name="SaveFileBtn"
+                Text="Save file"
+                SemanticProperties.Hint="Save the file to device."
+                Clicked="OnSaveFileBtnClicked"/>
+
+             <Label
+                Text="Email:"
+                SemanticProperties.HeadingLevel="Level1"
+                FontSize="16"
+                HorizontalOptions="Center" />
+
+            <Entry
+                x:Name="EmailEntry"
+                FontSize="15"
+                Placeholder="foo@bar.com"
+                IsTextPredictionEnabled="False"
+                IsSpellCheckEnabled="False"
+                Keyboard="Email"/>
+
+            <Button
+                x:Name="LoginBtn"
+                Text="Login"
+                SemanticProperties.Hint="Login to account."
+                Clicked="OnLoginBtnClicked"/>
+
+            <Label
+                x:Name="SignedInStatus"
+                Text="Status"
+                SemanticProperties.HeadingLevel="Level1"
+                FontSize="16"
+                HorizontalOptions="Center" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
+

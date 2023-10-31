@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Bundle version string (short)</key>
+	<string>1.0</string>
+	<key>CFBundleDisplayName</key>
+	<string>Microsoft Intune MAM Sample Maui</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.maui.microsoftintunemamsample</string>
+	<key>CFBundleName</key>
+	<string>Microsoft Intune MAM Sample Maui</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>msauth.com.microsoft.intunemam</string>
+				<string>&lt;REPLACE WITH AAD REDIRECT URI SCHEME&gt;</string>
+				<string>&lt;REPLACE WITH AAD REDIRECT URI SCHEME&gt;-intunemam</string>
+			</array>
+		</dict>
+	</array>
+	<key>CFBundleVersion</key>
+	<string>1</string>
+	<key>IntuneMAMSettings</key>
+	<dict>
+		<key>ADALClientId</key>
+		<string>&lt;REPLACE WITH AAD CLIENT ID&gt;</string>
+		<key>ADALRedirectUri</key>
+		<string>&lt;REPLACE WITH AAD REDIRECT URI&gt;</string>
+	</dict>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>scmx</string>
+		<string>smsec</string>
+		<string>microsoft-edge-http</string>
+		<string>microsoft-edge-http-intunemam</string>
+		<string>lookoutwork-ase</string>
+		<string>mvisionmobile</string>
+		<string>skycure</string>
+		<string>companyportal</string>
+		<string>lacoonsecurity</string>
+		<string>msauthv2</string>
+		<string>wandera</string>
+		<string>betteractiveshield</string>
+		<string>msauthv3</string>
+		<string>microsoft-edge-https</string>
+		<string>microsoft-edge-https-intunemam</string>
+		<string>zips</string>
+		<string>ms-outlook</string>
+		<string>ms-outlook-intunemam</string>
+		<string>smart-ns</string>
+		<string>https-intunemam</string>
+		<string>http-intunemam</string>
+	</array>
+	<key>LSRequiresIPhoneOS</key>
+	<true/>
+	<key>UIDeviceFamily</key>
+	<array>
+		<integer>1</integer>
+		<integer>2</integer>
+	</array>
+	<key>UIRequiredDeviceCapabilities</key>
+	<array>
+		<string>arm64</string>
+	</array>
+	<key>UISupportedInterfaceOrientations</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationLandscapeLeft</string>
+		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
+	<key>UISupportedInterfaceOrientations~ipad</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationPortraitUpsideDown</string>
+		<string>UIInterfaceOrientationLandscapeLeft</string>
+		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
+	<key>XSAppIconAssets</key>
+	<string>Assets.xcassets/appicon.appiconset</string>
+</dict>
+</plist>
