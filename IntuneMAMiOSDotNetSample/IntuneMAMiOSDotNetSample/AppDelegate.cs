@@ -22,7 +22,7 @@ namespace IntuneMAMiOSDotNetSample
         public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions)
         {
             Console.WriteLine("Is User Managed: {0}",
-                              IntuneMAMPolicyManager.Instance.IsIdentityManaged(IntuneMAMEnrollmentManager.Instance.EnrolledAccount)
+                              IntuneMAMPolicyManager.Instance.IsAccountIdManaged(IntuneMAMEnrollmentManager.Instance.EnrolledAccountId)
                              );
             return true;
         }

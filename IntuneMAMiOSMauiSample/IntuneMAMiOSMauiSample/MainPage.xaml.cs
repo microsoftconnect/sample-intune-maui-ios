@@ -23,14 +23,14 @@ public partial class MainPage : ContentPage
 
     static bool HasEnrolledAccount()
     {
-        return !(IntuneMAMEnrollmentManager.Instance.EnrolledAccount == null || IntuneMAMEnrollmentManager.Instance.EnrolledAccount.Length == 0);
+        return !(IntuneMAMEnrollmentManager.Instance.EnrolledAccountId == null || IntuneMAMEnrollmentManager.Instance.EnrolledAccountId.Length == 0);
     }
 
     void UpdateLoginState()
     {
         bool Enrolled = HasEnrolledAccount();
         EmailEntry.IsReadOnly = Enrolled;
-        EmailEntry.Text = Enrolled ? IntuneMAMEnrollmentManager.Instance.EnrolledAccount : "";
+        EmailEntry.Text = Enrolled ? IntuneMAMEnrollmentManager.Instance.EnrolledAccountId : "";
         LoginBtn.Text = Enrolled ? "Logout" : "Login";
     }
 
@@ -57,7 +57,7 @@ public partial class MainPage : ContentPage
     void OnSaveFileBtnClicked(System.Object sender, System.EventArgs e)
     {
         // Apps are responsible for enforcing Save-As policy
-        if (!IntuneMAMPolicyManager.Instance.Policy.IsSaveToAllowedForLocation(IntuneMAMSaveLocation.LocalDrive, IntuneMAMEnrollmentManager.Instance.EnrolledAccount))
+        if (!IntuneMAMPolicyManager.Instance.Policy.IsSaveToAllowedForLocationWithAccountId(IntuneMAMSaveLocation.LocalDrive, IntuneMAMEnrollmentManager.Instance.EnrolledAccountId))
         {
             SaveFileBtn.Text = "Save file - Failed!";
             IntuneMAMUIHelper.ShowSharingBlockedMessage(delegate
@@ -90,7 +90,7 @@ public partial class MainPage : ContentPage
         }
         else
         {
-            IntuneMAMEnrollmentManager.Instance.DeRegisterAndUnenrollAccount(IntuneMAMEnrollmentManager.Instance.EnrolledAccount, true);
+            IntuneMAMEnrollmentManager.Instance.DeRegisterAndUnenrollAccountId(IntuneMAMEnrollmentManager.Instance.EnrolledAccountId, true);
             SignedInStatus.Text = "Logging out...";
             SemanticScreenReader.Announce(SignedInStatus.Text);
         }

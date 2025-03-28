@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFrameworks>net7.0-ios</TargetFrameworks>
+		<TargetFrameworks>net8.0-ios18</TargetFrameworks>
 		<OutputType>Exe</OutputType>
 		<RootNamespace>IntuneMAMiOSMauiSample</RootNamespace>
 		<UseMaui>true</UseMaui>
@@ -19,10 +19,11 @@
 		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
 		<ApplicationVersion>1</ApplicationVersion>
 
-		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">15.0</SupportedOSPlatformVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">16.0</SupportedOSPlatformVersion>
+		<SkipValidateMauiImplicitPackageReferences>true</SkipValidateMauiImplicitPackageReferences>
 	</PropertyGroup>
 
-	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net7.0-ios|AnyCPU'">
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net8.0-ios18|AnyCPU'">
 	  <CreatePackage>false</CreatePackage>
 	  <CodesignProvision>Automatic</CodesignProvision>
 	  <CodesignKey>iPhone Developer</CodesignKey>
@@ -30,7 +31,7 @@
 	  <MtouchDebug>true</MtouchDebug>
 	  <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
 	</PropertyGroup>
-	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net7.0-ios|AnyCPU'">
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net8.0-ios18|AnyCPU'">
 	  <CreatePackage>false</CreatePackage>
 	</PropertyGroup>
 	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -54,7 +55,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Microsoft.Intune.Maui.Essentials.iOS" Version="18.1.2.0" />
+		<PackageReference Include="Microsoft.Intune.Maui.Essentials.iOS" Version="20.4.1.0" />
 	</ItemGroup>
 
 </Project>

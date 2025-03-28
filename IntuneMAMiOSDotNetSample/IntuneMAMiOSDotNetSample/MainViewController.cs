@@ -17,7 +17,7 @@ namespace IntuneMAMiOSDotNetSample
 
         public override void ViewDidLoad()
         {
-            if (!string.IsNullOrWhiteSpace(IntuneMAMEnrollmentManager.Instance.EnrolledAccount))
+            if (!string.IsNullOrWhiteSpace(IntuneMAMEnrollmentManager.Instance.EnrolledAccountId))
             {
                 this.HideLogInButton();
             } else
@@ -65,7 +65,7 @@ namespace IntuneMAMiOSDotNetSample
         partial void ButtonSave_TouchUpInside(UIButton sender)
         {
             // Apps are responsible for enforcing Save-As policy
-            if (!IntuneMAMPolicyManager.Instance.Policy.IsSaveToAllowedForLocation(IntuneMAMSaveLocation.LocalDrive, IntuneMAMEnrollmentManager.Instance.EnrolledAccount))
+            if (!IntuneMAMPolicyManager.Instance.Policy.IsSaveToAllowedForLocationWithAccountId(IntuneMAMSaveLocation.LocalDrive, IntuneMAMEnrollmentManager.Instance.EnrolledAccountId))
             {
                 this.ShowAlert("Blocked", "Blocked from writing to local location");
                 return;
@@ -92,7 +92,7 @@ namespace IntuneMAMiOSDotNetSample
 
         partial void ButtonLogOut_TouchUpInside(UIButton sender)
         {
-            IntuneMAMEnrollmentManager.Instance.DeRegisterAndUnenrollAccount(IntuneMAMEnrollmentManager.Instance.EnrolledAccount, true);
+            IntuneMAMEnrollmentManager.Instance.DeRegisterAndUnenrollAccountId(IntuneMAMEnrollmentManager.Instance.EnrolledAccountId, true);
         }
 
         public void ShowAlert(string title, string message)
