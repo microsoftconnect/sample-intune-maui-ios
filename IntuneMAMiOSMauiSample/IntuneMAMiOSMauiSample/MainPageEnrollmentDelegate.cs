@@ -10,13 +10,12 @@ namespace IntuneMAMiOSMauiSample
 		public MainPageEnrollmentDelegate(MainPage PageInstance)
 		{
 			this.MainPageInstance = PageInstance;
-            Console.WriteLine("Page instance was set to MainPage passed in >>>?????");
+            Console.WriteLine("Page instance was set to MainPage.");
         }
-        //this is still a work in progress, I don't even know if this will work
 
         public override void EnrollmentRequestWithStatus(IntuneMAMEnrollmentStatus status)
         {
-            Console.WriteLine("Checking status of enrollment request. ????????");
+            Console.WriteLine("Checking status of enrollment request.");
 
             if (status.DidSucceed)
             {
